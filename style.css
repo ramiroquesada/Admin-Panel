@@ -64,9 +64,9 @@ body {
 .sidebar {
   
   background-color: #fdcfcf;
-  visibility: visible;
+  visibility: hidden;
   position: absolute;
- padding: 100px;
+  padding: 100px;
  
   
  
