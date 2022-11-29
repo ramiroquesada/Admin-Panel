@@ -91,8 +91,8 @@ body {
   padding: 2px;
   border: 1px solid currentColor;
   border-radius: 5px;
-  min-width: 215px;
-  width: 50%;
+  min-width: 240px;
+  width: 57%;
 }
 
 input[type="search"] {
@@ -104,6 +104,7 @@ input[type="search"] {
   color: inherit;
   border: 1px solid transparent;
   border-radius: inherit;
+  width: 100%;
 }
 
 input[type="search"]::placeholder {
