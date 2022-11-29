@@ -152,10 +152,38 @@ input[type="search"]:focus {
 
 .sidebar {
   background-color: #fdcfcf;
-  visibility: hidden;
-  position: absolute;
-  padding: 100px;
+  visibility: visible;
+  position: fixed;
+  
 }
+
+.menu-container{
+  padding: 120px;
+}
+
+.sidebar-children{
+  display: flex;
+}
+
+#menu{
+  
+  padding: 0;
+  list-style-type: none;
+}
+
+#menu  li a{
+  
+    text-decoration: none;
+    color: #1E1E23;
+    opacity:1;
+    font-family: 'work sans', sans serif;
+    font-size: 1.5em;
+    font-weight: 400;
+    transition: 200ms;
+  }
+  
+
+
 
 /*        MAIN       */
 
@@ -176,7 +204,9 @@ input[type="search"]:focus {
 .main-content {
   display: grid;
   gap: 10px;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); 
+  grid-template-rows: min-content;
+  height: min-content;
 }
 
 /*        MAIN       */
@@ -185,6 +215,7 @@ input[type="search"]:focus {
 .grid-item {
   background-color: #fc15afd0;
   padding: 1rem;
+  max-height: 250px;
   min-height: 200px;
   flex-direction: column;
   gap: 10px;
@@ -221,7 +252,7 @@ input[type="search"]:focus {
   flex-direction: column;
   padding: 10px;
 
-  justify-content: space-around;
+ 
 }
 
 /*        MAIN       */
@@ -249,6 +280,13 @@ input[type="search"]:focus {
   padding: 15px;
 }
 
+
+.announcements{
+  display: flex;
+  flex-direction: column;
+  gap:8px;
+}
+
 .ann-item-title {
   font-size: 0.8rem;
   font-weight: 600;
@@ -262,6 +300,7 @@ input[type="search"]:focus {
 .trending-item {
   display: flex;
   align-items: center;
+  
 }
 
 .trending {
@@ -272,6 +311,7 @@ input[type="search"]:focus {
 
 .trending-profile p {
   margin: 8px;
+  font-size: 0.9rem;
 }
 
 .profile-img-container img {
@@ -295,11 +335,7 @@ input[type="search"]:focus {
 
 /* SPECIAL MEDIA QUERY FOR MAIN-BAR SIZING*/
 
-@media (min-width: 500px) {
-  .main-bar {
-    flex-direction: row;
-  }
-}
+
 
 /*        MEDIA QUERY FOR TABLETS       */
 
@@ -315,7 +351,11 @@ input[type="search"]:focus {
 
   .sidebar {
     margin-left: 5px;
+  
   }
+
+ 
+
 
   .main {
     grid-template-columns: 3fr 1fr;
@@ -365,4 +405,18 @@ input[type="search"]:focus {
   .main-bar {
     margin-right: 5px;
   }
+
+
+  .menu-container{
+    padding: 20px;
+  }
+
+  .sidebar-children{
+    
+
+    display:flex ;
+    
+  }
+
+
 }
