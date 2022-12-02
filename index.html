@@ -15,12 +15,13 @@
       referrerpolicy="no-referrer"
     />
   </head>
-
+  <button title="menu" type="button" class="burger-menu-button">
+    <i class="fa-solid fa-bars"></i>
+    <i class="fa-solid fa-xmark "></i>
+  </button>
   <body class="grid-container">
     <header class="header flex">
-      <div class="burger-menu-button">
-        <i class="fa-solid fa-bars"></i>
-      </div>
+      
       <div class="header-container">
         <form action="" class="search-container">
           <label><i class="fa-solid fa-magnifying-glass"></i></label>
@@ -40,10 +41,8 @@
     </header>
 
     <sidebar class="sidebar">
-      <div class="sidebar-children">
-        <div class="burger-menu-button">
-          <i class="fa-solid fa-bars"></i>
-        </div>
+      
+        
         <div class="menu-container">
           <ul id="menu">
             <li><a href="#">Home</a></li>
@@ -52,7 +51,7 @@
             <li><a href="#">Contact</a></li>
           </ul>
         </div>
-      </div>
+      
     </sidebar>
 
     <navbar class="navbar">
@@ -60,15 +59,18 @@
        
                     
          <div class="navbar-grid">
+          <div class="navbar-grid-item tus-proyectos-h1">
+            <h1>Tus Proyectos</h1>
+          </div>
           
           <div class="navbar-grid-item">
-            <button class="navb-button">Nuevo Proyecto</button>
+            <button type="button" class="navb-button">Nuevo Proyecto</button>
           </div>
           <div class="navbar-grid-item">
-            <button class="navb-button">Subir Archivos</button>
+            <button type="button"  class="navb-button">Subir Archivos</button>
           </div>
           <div class="navbar-grid-item">
-            <button class="navb-button">Invitar Amigos</button>
+            <button type="button"  class="navb-button">Invitar Amigos</button>
           </div>
          
 
@@ -86,7 +88,7 @@
       <div class="main-content">
         <div class="grid-item">
           <div class="titulo-texto-wrapper">
-            <div class="card-title">Super Cool Project</div>
+            <p class="card-title">Super Cool Project</p>
             <div class="card-text">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum
               recusandae laboriosam animi magni provident est aspernatur
