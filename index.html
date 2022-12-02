@@ -15,12 +15,19 @@
       referrerpolicy="no-referrer"
     />
   </head>
-  <button title="menu" type="button" class="burger-menu-button">
-    <i class="fa-solid fa-bars"></i>
-    <i class="fa-solid fa-xmark "></i>
-  </button>
-  <body class="grid-container">
+  
+     
+    
+ 
+  <body id="body" class="grid-container">
+
+    
     <header class="header flex">
+      <div class="openclosemenu">
+        <button id="openMenu" class="open-menu" aria-label="Abrir Menú"><i class="fa-solid fa-bars"></i></button>
+        
+
+      </div>
       
       <div class="header-container">
         <form action="" class="search-container">
@@ -29,7 +36,7 @@
         </form>
 
         <div class="profile">
-          <p>Ramiro Quesada</p>
+          
           <i class="fa-regular fa-bell"></i>
           <img
             src="./imgs/profile-image.jpg"
@@ -37,13 +44,17 @@
             class="rounded"
           />
         </div>
+
+        
       </div>
+
     </header>
 
-    <sidebar class="sidebar">
+    <sidebar id="sidebar" class="sidebar hidden">
       
-        
+      <button id="closeMenu" class="close-menu displayNone" aria-label="Cerrar Menú"><i class="fa-solid fa-xmark "></i></button>
         <div class="menu-container">
+
           <ul id="menu">
             <li><a href="#">Home</a></li>
             <li><a href="#">About</a></li>
@@ -351,6 +362,6 @@
     </main>
 
     <footer class="footer flex">Footer</footer>
-
+    <script src="/app.js"></script>
   </body>
 </html>

@@ -7,7 +7,7 @@
 --primary-font: hsla(244, 17%, 16%, 1);
 --secondary-font: hsla(43, 16%, 39%, 1);
 --primary-links: hsla(35, 89%, 61%, 1);
---secondary-links: hsla(249, 100%, 75%, 1);
+--secondary-links: rgb(114, 89, 255);
 
 }
 
@@ -22,7 +22,16 @@ body {
   min-height: 100%;
   box-sizing: border-box;
   background-color: var(--primary-bg);
+
+  position: relative;
 }
+
+
+.bodyFullScreen{
+  height: 100%;
+   overflow-y: hidden;
+}
+
 
 p {
   margin: 3px 0px;
@@ -39,6 +48,7 @@ p {
   display: grid;
   gap: 10px;
   grid-template:
+  
     "header" 100px
     "navbar" 70px
     "main" auto
@@ -55,7 +65,7 @@ p {
 /*        HEADER       */
 
 .header {
-  background-color: #ffffffd0;
+  background-color: rgb(244, 170, 67);
   box-shadow: -1px 1px 7px 0px rgba(0, 0, 0, 0.75);
   border-radius: 4px;
   padding-right: 10px;
@@ -64,28 +74,43 @@ p {
   display: flex;
   align-items: center;
   justify-content:center;
-  padding-left: 35px;
-}
-
-.burger-menu-button {
-  height: 50px;
-  cursor: pointer;
-  position: fixed;
-  border: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  left: 20px;
-  top: 25px;
-  z-index:1;
-  background-color: transparent;
   
 }
 
-.fa-xmark{
-  font-size: 1.2rem;
-  visibility: hidden;  
+.openclosemenu{
+  
 }
+
+
+
+
+.open-menu{
+ 
+  left: 0px;
+  height: 50px;
+  color: aliceblue;
+  width: 50px;
+  border: none;
+  background-color: transparent;
+  transform: scale(1.5);
+  
+  
+}
+
+
+
+
+.close-menu{
+  height: 100px;
+  color: aliceblue;
+  width: 50px;
+  border: none;
+  background-color: transparent;
+  transform: scale(2);
+  
+}
+
+
 
 
 .header-container {
@@ -108,6 +133,7 @@ p {
   
   font-size: 1rem;
   width: min-content;
+  cursor: pointer;
 }
 
 .profile p{
@@ -146,7 +172,7 @@ input[type="search"] {
 }
 
 input[type="search"]::placeholder {
-  color: #bbb;
+  color: rgb(240, 240, 240);
 }
 
 button[type="submit"] {
@@ -242,6 +268,7 @@ input[type="search"]:focus {
   padding: 0.5rem 1rem;
   background-color: var(--primary-links);
   border-color: transparent;
+  font-weight: 600;
 
 }
 
@@ -263,19 +290,33 @@ input[type="search"]:focus {
 .sidebar {
   box-shadow: -1px 1px 7px 0px rgba(0, 0, 0, 0.75);
   border-radius: 4px;
-  visibility: visible;
+  
   position: fixed;
-  background-color: #ffffffd0;
+  background-color: #3f318d;
+  width: 100%;
+  height: 100%;
+  color: var(--primary-bg);
+  transition: opacity 0.12s;
   
 }
 
+.hidden{
+  
+  opacity: 0;
+  pointer-events: none;
+  
+}
 
-
+.displayNone{
+  display: none;
+}
 
 
 
 .menu-container{
   padding: 120px;
+  
+
 }
 
 .sidebar-children{
@@ -286,11 +327,13 @@ input[type="search"]:focus {
   
   padding: 0;
   list-style-type: none;
+  text-align: center;
+  
 }
 
 
 #menu  li {
-  margin-bottom: 20px;
+  margin-bottom: 40px;
 }
 
 
@@ -299,13 +342,15 @@ input[type="search"]:focus {
 #menu  li a{
   
     text-decoration: none;
-    color: var(--secondary-links) ;
+    color:aliceblue ;
     opacity:1;
     font-family: 'work sans', sans serif;
     font-size: 1.5em;
-    font-weight: 400;
+    font-weight: 600;
     transition: 200ms;
     margin-bottom: 20px;
+    
+    
   }
   
   #menu  li:hover{
@@ -512,10 +557,7 @@ input[type="search"]:focus {
       200px auto;
   }
 
-  .sidebar {
-    margin-left: 5px;
-  
-  }
+ 
 
  
   .tus-proyectos-h1{
@@ -549,7 +591,29 @@ input[type="search"]:focus {
   .main-bar {
     flex-direction: column;
   }
+
+
+  .close-menu{
+  
+    width: 100px;
+    
+    
+  }
+
+
+
+
+
+
+
 }
+
+
+
+
+
+
+
 
 /*        MEDIA QUERY FOR DESKTOP       */
 
@@ -563,10 +627,17 @@ input[type="search"]:focus {
       200px auto 200px;
   }
 
-  .burger-menu-button {
-   display: none;
-   
+
+
+
+
+
+  body{
+    
   }
+
+
+
 
 
   /*     HEADER    */
@@ -574,6 +645,15 @@ input[type="search"]:focus {
   .header{
     padding: 0;
   }
+
+
+
+  .openclosemenu{
+    display: none;
+  }
+
+  .search-container{}
+
 
 
 /*       NAVBAR      */
@@ -592,7 +672,17 @@ input[type="search"]:focus {
     padding: 1rem;
     background-color: #ffffffd0;;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    width: auto;
+    height: auto;
+    padding-left: 25%;
+    
+    
+    
+  }
+
+  .sidebar>button{
+    display: none;
   }
 
   .main {
@@ -614,6 +704,14 @@ input[type="search"]:focus {
     display:flex ;
     
   }
+
+  #menu{
+  
+   
+    text-align: left;
+    
+  }
+
 
 
 }
