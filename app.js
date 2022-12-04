@@ -3,6 +3,7 @@ let closeMenuBtn = document.getElementById("closeMenu");
 
 let sidebar = document.getElementById("sidebar");
 
+let btnEliminar = document.getElementsByClassName("eliminar");
 
 
 
@@ -35,4 +36,19 @@ let closeMenu = (e)=>{
     document.body.classList.remove("bodyFullScreen");
 }
 
-closeMenuBtn.addEventListener("click", closeMenu)
+closeMenuBtn.addEventListener("click", closeMenu);
+
+
+
+
+let eliminarTarjeta = (e)=>{
+    let cardsGridElement=e.path[4];
+    let cardElement = e.path[3]
+    cardsGridElement.removeChild(cardElement)
+    
+};
+
+
+for(let item of btnEliminar){
+item.addEventListener("click", eliminarTarjeta);
+}

@@ -465,6 +465,15 @@ align-items: center;
   cursor: pointer;
 }
 
+.fa-trash-can{
+  pointer-events: none;
+}
+
+
+
+
+
+
 .main-bar {
   
   min-width: 200px;
