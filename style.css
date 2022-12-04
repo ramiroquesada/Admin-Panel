@@ -14,6 +14,7 @@
 
 html {
   height: 100%;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -93,6 +94,7 @@ p {
   border: none;
   background-color: transparent;
   transform: scale(1.5);
+  cursor: pointer;
   
   
 }
@@ -107,7 +109,7 @@ p {
   border: none;
   background-color: transparent;
   transform: scale(2);
-  
+  cursor: pointer;
 }
 
 
@@ -247,7 +249,10 @@ input[type="search"]:focus {
   place-items: center;
   gap: 15px;
   justify-content: space-evenly;
-  
+  -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;   
 }
 
 .navbar-grid-item{
@@ -270,6 +275,7 @@ input[type="search"]:focus {
   background-color: var(--primary-links);
   border-color: transparent;
   font-weight: 600;
+  color: var(--primary-bg)
 
 }
 
@@ -314,44 +320,66 @@ input[type="search"]:focus {
 
 
 .menu-container{
-  padding: 120px;
+display: flex;
+flex-direction: column;
+align-items: center;
   
 
 }
 
 
 
-#menu{
+.sidebar-menu{
   
   padding: 0;
   list-style-type: none;
   text-align: center;
+
   
 }
 
 
-#menu  li {
-  margin-bottom: 40px;
+.sidebar-menu>li{
+  display: flex;
+  margin-bottom: 20px;
+  align-items: center;
+}
+
+
+.sidebar-menu>li>i{
+  margin-right: 1em;
+}
+
+
+.side-menu-top{
+  margin-bottom: 1rem;
+}
+
+
+
+.sidebar-menu  li {
+  margin-bottom: 1rem;
+  
 }
 
 
 
 
-#menu  li a{
+.sidebar-menu  li a{
   
     text-decoration: none;
     color:aliceblue ;
-    opacity:1;
-    font-family: 'work sans', sans serif;
+    opacity:1;    
     font-size: 1.5em;
     font-weight: 600;
     transition: 200ms;
-    margin-bottom: 20px;
+    
+    justify-content: center;
     
     
   }
   
-  #menu  li:hover{
+ .sidebar-menu  li:hover{
       transform: scale(1.03);
       transform: translateX(5px);
       transition: all 0.2s;
@@ -434,6 +462,7 @@ input[type="search"]:focus {
 .card-share > button, 
 .right-share > button{
   padding: 6px;
+  cursor: pointer;
 }
 
 .main-bar {
@@ -534,10 +563,21 @@ input[type="search"]:focus {
 
 .footer {
   grid-area: footer;
-  background-color: var(--primary-font)/*#8c96a0*/;
+  background-color: var(--primary-font);
+  color: var(--primary-bg);
   align-items: center;
   justify-content: center;
+  color: rgb(201, 201, 201);
 }
+
+.footer a{
+  text-decoration: none;
+  color: var(--primary-bg);
+  margin: 0;
+  padding: 0;
+}
+
+
 
 /* SPECIAL MEDIA QUERY FOR MAIN-BAR SIZING*/
 
@@ -555,7 +595,9 @@ input[type="search"]:focus {
       200px auto;
   }
 
- 
+ .fa-fire{
+  opacity: 0;
+ }
 
  
   .tus-proyectos-h1{
@@ -673,7 +715,7 @@ input[type="search"]:focus {
     flex-direction: column;
     width: auto;
     height: auto;
-    padding-left: 25%;
+   
     color: #3f318d;
     border-radius: 0;
     
@@ -702,7 +744,7 @@ input[type="search"]:focus {
 
 
   .menu-container{
-    padding: 20px;
+    padding: 0px;
   }
 
   .sidebar-children{
@@ -712,14 +754,21 @@ input[type="search"]:focus {
     
   }
 
-  #menu{
+  .sidebar-menu{
   
    
     text-align: left;
+    font-size: 0.9rem;
     
   }
 
-  #menu  li a{
+
+  .sidebar-menu  li {
+    
+  }
+
+
+  .sidebar-menu  li a{
   
     
     color: var(--secondary-links) ;

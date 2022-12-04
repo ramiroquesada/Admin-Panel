@@ -25,7 +25,7 @@
     
     <header class="header flex">
       <div class="openclosemenu">
-        <button id="openMenu" class="open-menu" aria-label="Abrir Menú"><i class="fa-solid fa-bars"></i></button>
+        <button title="Menu" id="openMenu" class="open-menu" aria-label="Abrir Menú"><i class="fa-solid fa-bars"></i></button>
         
 
       </div>
@@ -33,13 +33,14 @@
       <div class="header-container">
         <form action="" class="search-container">
           <label><i class="fa-solid fa-magnifying-glass"></i></label>
-          <input type="search" placeholder="Buscar.." />
+          <input title="Buscar" type="search" placeholder="Buscar.." />
         </form>
 
         <div class="profile">
+          <a title="Tendencias" href="#trend-wrap"><i class="fa-solid fa-fire"></i></a>
           
-          <i class="fa-regular fa-bell"></i>
-          <img
+          <i title="Notificaciones" class="fa-regular fa-bell"></i>
+          <img title="Perfil"
             src="./imgs/profile-image.jpg"
             alt="Profile Image"
             class="rounded"
@@ -56,11 +57,21 @@
       <button id="closeMenu" class="close-menu displayNone" aria-label="Cerrar Menú"><i class="fa-solid fa-xmark "></i></button>
         <div class="menu-container">
 
-          <ul id="menu">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Info</a></li>
-            <li><a href="#">Contact</a></li>
+          <ul class="sidebar-menu side-menu-top">
+            
+            <li><i class="fa-solid fa-house"></i><a href="#">Inicio</a></li>
+            <li><i class="fa-solid fa-address-card"></i><a href="#">Perfil</a></li>
+            <li><i class="fa-solid fa-message"></i><a href="#">Mensajes</a></li>
+            <li><i class="fa-solid fa-clock-rotate-left"></i><a href="#">Historial</a></li>
+            <li><i class="fa-solid fa-list-check"></i><a href="#">Tareas</a></li>
+            <li><i class="fa-solid fa-users"></i><a href="#">Comunidades</a></li>
+          </ul> 
+
+          <ul class="sidebar-menu">
+            <li><i class="fa-solid fa-gear"></i><a href="#">Configuración</a></li>
+            <li><i class="fa-sharp fa-solid fa-circle-info"></i><a href="#">Soporte</a></li>
+            <li><i class="fa-solid fa-lock"></i><a href="#">Privacidad</a></li>
+
           </ul>
         </div>
       
@@ -275,7 +286,7 @@
     
       <div class="main-bar">
 
-        <div class="trending-wrapper">
+        <div class="trending-wrapper" id="trend-wrap">
           <div class="title-icon">
             <h1>Trending</h1>
 
@@ -362,7 +373,15 @@
       </div>
     </main>
 
-    <footer class="footer flex">Footer</footer>
+    <footer class="footer flex">
+      <p>
+        Creado por
+        <a href="https://github.com/ramessj" target="blank">Ramiro Quesada</a>
+        • Hosteado en
+        <a href="https://github.com/ramessj/Admin-Panel" target="blank">GitHub</a>
+      </p>
+    </footer>
     <script src="./app.js"></script>
+    
   </body>
 </html>
