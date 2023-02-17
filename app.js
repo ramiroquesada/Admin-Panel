@@ -42,9 +42,10 @@ closeMenuBtn.addEventListener("click", closeMenu);
 
 
 let eliminarTarjeta = (e)=>{
-    let cardsGridElement=e.path[4];
-    let cardElement = e.path[3]
-    cardsGridElement.removeChild(cardElement)
+    let cardsGridElement=e.target.parentElement.parentElement.parentElement;
+    console.log(cardsGridElement)
+    
+    cardsGridElement.remove();
     
 };
 
